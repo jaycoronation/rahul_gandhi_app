@@ -15,6 +15,7 @@ import '../common_widget/loading.dart';
 import '../widget/csr_block.dart';
 import '../widget/social_block.dart';
 import '../widget/whats_new_block.dart';
+import 'Navigation Screen.dart';
 
 class DashBoardScreen extends StatefulWidget {
   const DashBoardScreen({Key? key}) : super(key: key);
@@ -427,20 +428,25 @@ class _DashBoardScreen extends BaseState<DashBoardScreen> with SingleTickerProvi
               clipBehavior: Clip.antiAlias,
               margin: const EdgeInsets.only(left: 8),
               alignment: Alignment.center,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(50),
-                child: sessionManager.getImagePic().toString().isEmpty
-                    ? Image.asset(
-                  'assets/images/ic_user_profile.png',
-                  height: 42,
-                  width: 42,
-                  fit: BoxFit.cover,
-                )
-                    : Image.network(
-                  profilePic,
-                  height: 42,
-                  width: 42,
-                  fit: BoxFit.cover,
+              child: GestureDetector(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const NavigationScreen()),);
+                },
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(50),
+                  child: sessionManager.getImagePic().toString().isEmpty
+                      ? Image.asset(
+                    'assets/images/ic_user_profile.png',
+                    height: 42,
+                    width: 42,
+                    fit: BoxFit.cover,
+                  )
+                      : Image.network(
+                    profilePic,
+                    height: 42,
+                    width: 42,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),
@@ -588,9 +594,9 @@ class _DashBoardScreen extends BaseState<DashBoardScreen> with SingleTickerProvi
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
-                                    Text(
+                                    const Text(
                                       "Dear Pratiksha Panchal, ",
-                                      style: const TextStyle(color: blackConst, fontWeight: FontWeight.w600, fontSize: 20, fontFamily: gilroy),
+                                      style: TextStyle(color: blackConst, fontWeight: FontWeight.w600, fontSize: 20, fontFamily: gilroy),
                                     ),
                                     Container(
                                       height: 12,
@@ -654,9 +660,9 @@ class _DashBoardScreen extends BaseState<DashBoardScreen> with SingleTickerProvi
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
-                                    Text(
+                                    const Text(
                                       "Dear Pratiksha Panchal, ",
-                                      style: const TextStyle(color: blackConst, fontWeight: FontWeight.w600, fontSize: 20, fontFamily: gilroy),
+                                      style: TextStyle(color: blackConst, fontWeight: FontWeight.w600, fontSize: 20, fontFamily: gilroy),
                                     ),
                                     Container(
                                       height: 12,
@@ -1023,7 +1029,7 @@ class _DashBoardScreen extends BaseState<DashBoardScreen> with SingleTickerProvi
                         ),
                       ), //WhatsNew
                       Container(
-                        margin: EdgeInsets.only(top: 20, bottom:20, left: 0, right: 0),
+                        margin: const EdgeInsets.only(top: 20, bottom:20, left: 0, right: 0),
                         width: MediaQuery.of(context).size.width,
                         height: 400,
                         child: PageView.builder(
@@ -1077,10 +1083,11 @@ class _DashBoardScreen extends BaseState<DashBoardScreen> with SingleTickerProvi
                               height: 90,
                               margin: const EdgeInsets.only(top: 30, bottom: 30),
                               decoration: const BoxDecoration(
+                                color: Colors.grey,
                                 shape: BoxShape.circle,
                               ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(4.0),
+                              child: const Padding(
+                                padding: EdgeInsets.all(4.0),
                                 child: CircleAvatar(
                                   radius: 48,
                                   backgroundImage: NetworkImage(" "),
@@ -1184,14 +1191,15 @@ class _DashBoardScreen extends BaseState<DashBoardScreen> with SingleTickerProvi
                                         children: [
                                           Container(
                                             margin: const EdgeInsets.fromLTRB(12, 6, 12, 12),
-                                            child: Text(
+                                            child: const Text(
                                               "",
-                                              style: const TextStyle(
+                                              style: TextStyle(
                                                   color: whiteConst,
                                                   fontWeight: FontWeight.w600,
                                                   fontFamily: gilroy,
                                                   fontSize: titleFontSize,
-                                                  overflow: TextOverflow.ellipsis),
+                                                  overflow: TextOverflow.ellipsis
+                                              ),
                                               maxLines: 2,
                                             ),
                                           ),
@@ -1509,7 +1517,7 @@ class _DashBoardScreen extends BaseState<DashBoardScreen> with SingleTickerProvi
                                                 alignment: Alignment.center,
                                                 padding: const EdgeInsets.only(top: 4, bottom: 4),
                                                 child: Text(
-                                                  "",
+                                                  "Rahul Gandhi",
                                                   style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16, fontFamily: gilroy, color: black),
                                                   overflow: TextOverflow.clip,
                                                 )
@@ -1524,45 +1532,42 @@ class _DashBoardScreen extends BaseState<DashBoardScreen> with SingleTickerProvi
                           },
                         ),
                       ), //Leadership
-                      Visibility(
-                        visible: photo,
-                        child: Container(
-                          alignment: Alignment.centerLeft,
-                          margin: const EdgeInsets.only(left: 14, right: 14, top: 32),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              RichText(
-                                text: TextSpan(
-                                  children: <TextSpan>[
-                                    TextSpan(
-                                        text: 'PHOTOS',
-                                        style: TextStyle(fontFamily: gilroy, fontSize: 16, color: black, fontWeight: FontWeight.w600)),
-                                  ],
-                                ),
+                      Container(
+                        alignment: Alignment.centerLeft,
+                        margin: const EdgeInsets.only(left: 14, right: 14, top: 32),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            RichText(
+                              text: TextSpan(
+                                children: <TextSpan>[
+                                  TextSpan(
+                                      text: 'PHOTOS',
+                                      style: TextStyle(fontFamily: gilroy, fontSize: 16, color: black, fontWeight: FontWeight.w600)),
+                                ],
                               ),
-                              GestureDetector(
-                                onTap: () {
-                                  final BottomNavigationBar bar = bottomWidgetKey.currentWidget as BottomNavigationBar;
-                                  bar.onTap!(2);
-                                },
-                                child: Row(
-                                  children: const [
-                                    Text(
-                                      "see all",
-                                      style: TextStyle(color: text_dark, fontWeight: FontWeight.w500, fontSize: 16, fontFamily: gilroy),
-                                    ),
-                                    Icon(
-                                      Icons.arrow_forward_ios,
-                                      color: text_dark,
-                                      size: 13,
-                                    )
-                                  ],
-                                ),
-                              )
-                            ],
-                          ),
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                final BottomNavigationBar bar = bottomWidgetKey.currentWidget as BottomNavigationBar;
+                                bar.onTap!(2);
+                              },
+                              child: Row(
+                                children: const [
+                                  Text(
+                                    "see all",
+                                    style: TextStyle(color: text_dark, fontWeight: FontWeight.w500, fontSize: 16, fontFamily: gilroy),
+                                  ),
+                                  Icon(
+                                    Icons.arrow_forward_ios,
+                                    color: text_dark,
+                                    size: 13,
+                                  )
+                                ],
+                              ),
+                            )
+                          ],
                         ),
                       ), //photo
                       Container(
@@ -1698,13 +1703,6 @@ class _DashBoardScreen extends BaseState<DashBoardScreen> with SingleTickerProvi
                                             ),
                                           ],
                                         ),
-                                        /*Container(
-                                              margin: const EdgeInsets.only(
-                                                top: 22,
-                                                left: 12,
-                                              ),
-                                              child: Image.asset("assets/images/ic_et_logo.png", width: 140, color: black),
-                                            ),*/
                                         Container(
                                           padding: const EdgeInsets.fromLTRB(12, 22, 12, 0),
                                           child: Text(

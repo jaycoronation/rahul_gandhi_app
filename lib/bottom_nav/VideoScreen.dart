@@ -13,6 +13,7 @@ import '../widget/loading.dart';
 import '../widget/loading_more.dart';
 import '../widget/video_block.dart';
 
+
 class VideoScreen extends StatefulWidget {
   const VideoScreen({Key? key}) : super(key: key);
 
@@ -22,10 +23,6 @@ class VideoScreen extends StatefulWidget {
 
 class _VideoScreen extends BaseState<VideoScreen> {
   bool _isLoading = false;
-  bool _isLoadingMore = false;
-  int _pageIndex = 0;
-  final int _pageResult = 15;
-  bool _isLastPage = false;
   bool isScrollingDown = false;
   late ScrollController _scrollViewController;
 
@@ -51,9 +48,9 @@ class _VideoScreen extends BaseState<VideoScreen> {
           setState(() {});
         }
       }
-
     });
-    
+
+    }
 
 
   @override
@@ -89,32 +86,40 @@ class _VideoScreen extends BaseState<VideoScreen> {
       resizeToAvoidBottomInset: true,
       body: _isLoading
           ? const LoadingWidget()
-          :  AnimationLimiter(
-        child: ListView.builder(
-          scrollDirection: Axis.vertical,
-          controller: _scrollViewController,
-          physics: const AlwaysScrollableScrollPhysics(),
-          itemCount: 5,
-          itemBuilder: (context, index) {
-            return AnimationConfiguration.staggeredList(
-              position: index,
-              duration: const Duration(milliseconds: 375),
-              child: SlideAnimation(
-                verticalOffset: 50.0,
-                child: FadeInAnimation(
-                  child: VideoBlock(),
-                ),
-              ),
-            );
-          },
-        ),
-      ),
+          : Column(
+            children: [
+              Expanded(child: Stack(
+                children: [
+                  AnimationLimiter(
+                    child: ListView.builder(
+                      scrollDirection: Axis.vertical,
+                      controller: _scrollViewController,
+                      physics: const AlwaysScrollableScrollPhysics(),
+                      itemCount: 5,
+                      itemBuilder: (context, index) {
+                        return AnimationConfiguration.staggeredList(
+                          position: index,
+                          duration: const Duration(milliseconds: 375),
+                          child: SlideAnimation(
+                            verticalOffset: 50.0,
+                            child: FadeInAnimation(
+                              child: VideoBlock(),
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                  )
+                ],
+              )),
+            ],
+          ),
     );
   }
 
 
   @override
   void castStatefulWidget() {
-    widget is VideoScreen;
+    // TODO: implement castStatefulWidget
   }
 }

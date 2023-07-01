@@ -154,7 +154,7 @@ navigationItem(BuildContext context){
   return SingleChildScrollView(
     child: Column(
       children: [
-        // const Gap(25),
+        Container(height: 25),
         GestureDetector(
           onTap: () {
             Navigator.pop(context);
@@ -168,7 +168,7 @@ navigationItem(BuildContext context){
               child: Row(
                 children: [
                   Image.asset("assets/images/ic_aboutJSP_new_navigation.png", height: 30, width: 30),
-                  // const Gap(15),
+                  Container(width: 15,),
                   Text(
                     "About JSP".toUpperCase(),
                     style: TextStyle(fontFamily: gilroy, fontSize: 16, color: black, fontWeight: FontWeight.w500),
@@ -192,7 +192,7 @@ navigationItem(BuildContext context){
               child: Row(
                 children: [
                   Image.asset("assets/images/ic_aboutChairman_new_navigation.png", height: 30, width: 30),
-                  // const Gap(15),
+                 Container(width: 15,),
                   Text(
                     "Chairman's Space".toUpperCase(),
                     style: TextStyle(fontFamily: gilroy, fontSize: 16, color: black, fontWeight: FontWeight.w500),
@@ -216,7 +216,7 @@ navigationItem(BuildContext context){
               child: Row(
                 children: [
                   Image.asset("assets/images/ic_our_leadership.png",height: 30, width: 30 ),
-                  // const Gap(15),
+                  Container(width: 15,),
                   Text(
                     "Leadership Corner".toUpperCase(),
                     style: TextStyle(fontFamily: gilroy, fontSize: 16, color: black, fontWeight: FontWeight.w500),
@@ -226,8 +226,7 @@ navigationItem(BuildContext context){
             ),
           ),
         ),
-        // const Gap(10),
-
+        Container(height: 15,),
         GestureDetector(
           onTap: () {
             Navigator.pop(context);
@@ -241,7 +240,7 @@ navigationItem(BuildContext context){
               child: Row(
                 children: [
                   Image.asset("assets/images/ic_csr.png",height: 30, width: 30),
-                  // const Gap(15),
+                  Container(width: 15,),
                   Text(
                     "Empowering Communities".toUpperCase(),
                     style: TextStyle(fontFamily: gilroy, fontSize: 16, color: black, fontWeight: FontWeight.w500),
@@ -251,8 +250,7 @@ navigationItem(BuildContext context){
             ),
           ),
         ),
-        // const Gap(10),
-        GestureDetector(
+        Container(height: 15,),        GestureDetector(
           onTap: () {
             Navigator.pop(context);
             // Navigator.push(context, MaterialPageRoute(builder: (context) => const MediaCoverageScreen()));
@@ -265,8 +263,7 @@ navigationItem(BuildContext context){
               child:  Row(
                 children: [
                   Image.asset("assets/images/ic_media_new_navigation.png",height: 30, width: 30),
-                  // const Gap(15),
-                  Text(
+                  Container(width: 15,),                       Text(
                     "Media Coverage".toUpperCase(),
                     style: TextStyle(fontFamily: gilroy, fontSize: 16, color: black, fontWeight: FontWeight.w500),
                   )
@@ -275,8 +272,7 @@ navigationItem(BuildContext context){
             ),
           ),
         ),
-        // const Gap(10),
-        GestureDetector(
+        Container(height: 15,),        GestureDetector(
           onTap: () async {
             Navigator.pop(context);
             // Navigator.push(context, MaterialPageRoute(builder: (context) => const MagazineListScreen()));
@@ -291,8 +287,7 @@ navigationItem(BuildContext context){
               Row(
                 children: [
                   Image.asset("assets/images/ic_magazine_new_navigation.png",height: 30, width: 30),
-                  // const Gap(15),
-                  Text(
+                  Container(width: 15,),                       Text(
                     "Magazine".toUpperCase(),
                     style: TextStyle(fontFamily: gilroy, fontSize: 16, color: black, fontWeight: FontWeight.w500),
                   )
@@ -301,8 +296,7 @@ navigationItem(BuildContext context){
             ),
           ),
         ),
-        // const Gap(10),
-        GestureDetector(
+        Container(height: 15,),        GestureDetector(
           onTap: () async {
             Navigator.pop(context);
             // Navigator.push(context, MaterialPageRoute(builder: (context) => const TownHallScreen()));
@@ -317,7 +311,7 @@ navigationItem(BuildContext context){
               Row(
                 children: [
                   Image.asset("assets/images/ic_townhall.png",height: 30, width: 30),
-                  // const Gap(15),
+                  Container(width: 15,),
                   Text(
                     "Town Hall".toUpperCase(),
                     style: TextStyle(fontFamily: gilroy, fontSize: 16, color: black, fontWeight: FontWeight.w500),
@@ -327,8 +321,7 @@ navigationItem(BuildContext context){
             ),
           ),
         ),
-        // const Gap(10),
-      ],
+        Container(height: 15,),      ],
     ),
   );
 }

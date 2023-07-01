@@ -2,12 +2,8 @@ import 'dart:convert';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:like_button/like_button.dart';
-import 'package:pretty_http_logger/pretty_http_logger.dart';
-import 'package:provider/provider.dart';
-import '../constant/api_end_point.dart';
 import '../constant/colors.dart';
-import '../constant/global_context.dart';
+
 
 class VideoBlock extends StatelessWidget {
 
@@ -49,18 +45,7 @@ class VideoBlock extends StatelessWidget {
                 borderRadius: BorderRadius.circular(0)
             ),
           ),
-          Positioned.fill(
-            child: Container(
-              width: 46,
-              height: 46,
-              alignment: Alignment.center,
-              child: Image.asset(
-                'assets/images/play.png',
-                height: 46,
-                width: 46,
-              ),
-            ),
-          ),
+
           Positioned(
               bottom: 22,
               left: 16,
@@ -79,31 +64,33 @@ class VideoBlock extends StatelessWidget {
                   ),
                   Container(
                       width: MediaQuery.of(context).size.width - 50,
-                      margin: const EdgeInsets.only(top: 12, right: 18,bottom: 22),
-                      child: Text(
-                        "",
-                        overflow: TextOverflow.clip,
-                        maxLines: 2,
-                        style: const TextStyle(
-                            color: whiteConst,
-                            fontWeight: FontWeight.w600,
-                            fontFamily: gilroy,
-                            fontSize: titleFontSize,
-                            overflow: TextOverflow.ellipsis),
-                      )),
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width - 40,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Text(
-                          "",
-                          style: TextStyle(fontSize: 14, fontFamily: gilroy, fontWeight: FontWeight.w500, color: white),
+                      margin: EdgeInsets.only(top: 12, right: 18,bottom: 22),
+                      child: const Center(
+                        child: Text(
+                          "leader Rahul Gandhi",
+                          overflow: TextOverflow.clip,
+                          maxLines: 2,
+                          style: TextStyle(
+                              color: whiteConst,
+                              fontWeight: FontWeight.w600,
+                              fontFamily: gilroy,
+                              fontSize: titleFontSize,
+                              overflow: TextOverflow.ellipsis),
                         ),
-                      ],
-                    ),
-                  )
+                      )),
+                  // SizedBox(
+                  //   width: MediaQuery.of(context).size.width - 40,
+                  //   child: Row(
+                  //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  //     crossAxisAlignment: CrossAxisAlignment.center,
+                  //     children: [
+                  //       Text(
+                  //         "leader Rahul Gandhi",
+                  //         style: TextStyle(fontSize: 14, fontFamily: gilroy, fontWeight: FontWeight.w500, color: white),
+                  //       ),
+                  //     ],
+                  //   ),
+                  // )
                 ],
               )
           ),

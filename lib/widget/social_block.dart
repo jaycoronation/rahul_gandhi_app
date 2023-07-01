@@ -28,7 +28,7 @@ class SocialBlock extends StatelessWidget {
           Stack(
             children: [
               Image.network(
-                "https://res.cloudinary.com/dliifke2y/image/upload/v1665053049/gettyimages-136752549-2048x2048_ujbtaf.jpg",
+                "https://res.cloudinary.com/dliifke2y/image/upload/v1665053050/gettyimages-1013854582-2048x2048_gp57y6.jpg",
                 width: MediaQuery.of(context).size.width,
                 height: 320,
                 fit: BoxFit.cover,
@@ -46,7 +46,7 @@ class SocialBlock extends StatelessWidget {
                     padding: const EdgeInsets.all(6),
                     alignment: Alignment.center,
                     child: Image.asset(
-                      "",
+                      "assets/images/ic_twitter_new_navigation.png",
                       height: 24,
                       width: 24,
                       color: blackConst,
@@ -57,10 +57,12 @@ class SocialBlock extends StatelessWidget {
           Container(
             padding: const EdgeInsets.fromLTRB(12, 12, 12, 0),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Expanded(
                   child: Text(
-                   "29 June, 2023",
+                   "Congress leader Rahul Gandhi on Sunday questioned the Centre over unemployment and alleged that two lakh jobs were 'eliminated' from PSUs, while also accusing the government of trampling upon the hopes of youths for the 'benefit of a few crony capitalist friends'.",
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle (
                         color: black,
@@ -81,7 +83,7 @@ class SocialBlock extends StatelessWidget {
           ),
           Container(
             padding: const EdgeInsets.fromLTRB(12, 6, 12, 12),
-            child: Text("Rahul Gandhi lands in Manipur",
+            child: Text("June 18, 2023",
                 style: const TextStyle(
                     color: text_dark, fontFamily: gilroy, fontWeight: FontWeight.w600, fontSize: 12)),
           ),

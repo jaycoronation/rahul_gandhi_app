@@ -9,12 +9,16 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:package_info_plus/package_info_plus.dart';
+import 'package:rahul_gandhi_app/widget/video_block.dart';
 import '../constant/colors.dart';
 import '../constant/global_context.dart';
 import '../utils/app_utils.dart';
 import '../utils/base_class.dart';
 import 'DashBoardScreen.dart';
 import 'EventScreenTab.dart';
+import 'MediaScreen.dart';
+import 'SocialWallTabScreen.dart';
+import 'VideoScreen.dart';
 
 
 class BottomNavigationBarScreen extends StatefulWidget {
@@ -70,14 +74,14 @@ class _BottomNavigationBarScreenState extends BaseState<BottomNavigationBarScree
       label: 'Events',
     ));
 
-    _pages.add(const EventScreenTab());
+    _pages.add(const MediaScreen());
     itemsList.add(BottomNavigationBarItem(
       icon: Image.asset("assets/images/ic_media_un_selected.png",width: 22,height: 22,color: black),
       activeIcon: Image.asset("assets/images/ic_media_selected_white.png",width: 22,height: 22),
       label: 'Gallery',
     ));
 
-    _pages.add(const EventScreenTab());
+    _pages.add(const SocialWallTabScreen());
     itemsList.add(BottomNavigationBarItem(
       icon: Image.asset("assets/images/ic_social_un_selected.png",width: 22,height: 22,color: black),
       activeIcon: Image.asset("assets/images/ic_social_active.png",width: 22,height: 22),
@@ -85,15 +89,13 @@ class _BottomNavigationBarScreenState extends BaseState<BottomNavigationBarScree
     ));
 
 
-    if(isEventTab)
-    {
-      _pages.add(const EventScreenTab());
-      /*itemsList.add(BottomNavigationBarItem(
-        icon: Image.asset("assets/images/ic_event_un_selected.png",width: 22,height: 22,color: black),
-        activeIcon: Image.asset(sessionManager.getDarkMode() == true ? "assets/images/ic_event_selected_white.png":"assets/images/ic_event_selected_black.png",width: 22,height: 22),
-        label: 'Event',
-      ));*/
-    }
+    itemsList.add(BottomNavigationBarItem(
+      icon: Image.asset("assets/images/ic_more_un_selected.png",width: 22,height: 22,color: black),
+      activeIcon: Image.asset("assets/images/ic_more_selected_black.png",width: 22,height: 22),
+      label: 'More',
+    ));
+
+
 
     if(isMoreTab)
     {
@@ -193,7 +195,8 @@ class _BottomNavigationBarScreenState extends BaseState<BottomNavigationBarScree
                                           child: Padding(
                                             padding: const EdgeInsets.all(10.0),
                                             child: Image.asset("assets/images/ic_fav_nav_new.png",height: 30, width: 30, color: blackConst),
-                                          )),
+                                          )
+                                      ),
                                       Text('Favourites', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: black)),
                                     ],
                                   ),
@@ -299,7 +302,9 @@ class _BottomNavigationBarScreenState extends BaseState<BottomNavigationBarScree
           {
             HapticFeedback.lightImpact();
           }
-
+        setState(() {
+          _currentIndex = value;
+        });
 
       }
     else
@@ -316,6 +321,7 @@ class _BottomNavigationBarScreenState extends BaseState<BottomNavigationBarScree
         setState(() {
           _currentIndex = value;
         });
+
       }
 
   }
@@ -499,7 +505,7 @@ class _BottomNavigationBarScreenState extends BaseState<BottomNavigationBarScree
                                       color: black,
                                     ),
                                   ),
-                                  // const Gap(12),
+                                  Container(width: 15,),
                                   GestureDetector(
                                     onTap: () async {
                                       // launchCustomTab(context,"https://instagram.com/jsplcorporate?igshid=YmMyMTA2M2Y=");
@@ -511,7 +517,7 @@ class _BottomNavigationBarScreenState extends BaseState<BottomNavigationBarScree
                                       color: black,
                                     ),
                                   ),
-                                  // const Gap(15),
+                                  Container(width: 15,),
                                   GestureDetector(
                                     onTap: () async {
                                       // launchCustomTab(context,"https://twitter.com/jsplcorporate?lang=en");
@@ -523,7 +529,7 @@ class _BottomNavigationBarScreenState extends BaseState<BottomNavigationBarScree
                                       color: black,
                                     ),
                                   ),
-                                  // const Gap(15),
+                                  Container(width: 15,),
                                   GestureDetector(
                                     onTap: () async {
                                       // launchCustomTab(context,"https://www.youtube.com/@JSPLCorporate");

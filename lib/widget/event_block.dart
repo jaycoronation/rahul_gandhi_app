@@ -43,7 +43,7 @@ class EventBlock extends StatelessWidget {
               ),
               Container(height: 12,),
           Text(
-              "Jun 30, 2023",
+              "Manipur . June 30, 2023",
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
                 fontSize: 16,
@@ -60,8 +60,8 @@ class EventBlock extends StatelessWidget {
               style: TextStyle(
                 fontSize: 16,
                 fontFamily: gilroy,
-                fontWeight: FontWeight.w400,
-                color: black,
+                fontWeight: FontWeight.w500,
+                color: text_dark,
                 // overflow: TextOverflow.ellipsis,
               ),
             ),
