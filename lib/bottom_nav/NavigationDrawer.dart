@@ -88,7 +88,7 @@ class _NavigationDrawerScreenState extends BaseState<NavigationDrawerScreen> {
                         width: 0
                     ),
                     image: const DecorationImage(
-                        image: AssetImage("assets/images/ic_image.jpeg"),
+                        image: AssetImage("assets/images/rh.jpg"),
                         fit: BoxFit.cover
                     ),
                   ),
@@ -100,9 +100,11 @@ class _NavigationDrawerScreenState extends BaseState<NavigationDrawerScreen> {
                       margin:  const EdgeInsets.only(left: 12, right: 12, bottom: 70),
                       alignment: Alignment.topLeft,
                       decoration: BoxDecoration(
-                        boxShadow: [BoxShadow(
-                          blurRadius: 2.0,
-                        ),],
+                        boxShadow: const [
+                          BoxShadow(
+                            blurRadius: 2.0,
+                          ),
+                        ],
                         border: Border.all(width: 0.5),
                         color: white,
                         borderRadius:const BorderRadius.all(Radius.circular(12),) ,

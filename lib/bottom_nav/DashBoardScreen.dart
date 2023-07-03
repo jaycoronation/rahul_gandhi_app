@@ -12,11 +12,13 @@ import '../../constant/global_context.dart';
 import '../../utils/app_utils.dart';
 import '../../utils/base_class.dart';
 import '../../utils/session_manager_methods.dart';
+import '../CommonDetailPageScreen.dart';
 import '../common_widget/loading.dart';
 import '../model/CommonModelResponse.dart';
 import '../widget/csr_block.dart';
 import '../widget/social_block.dart';
 import '../widget/whats_new_block.dart';
+import 'NavScreen.dart';
 import 'Navigation Screen.dart';
 
 class DashBoardScreen extends StatefulWidget {
@@ -222,18 +224,26 @@ class _DashBoardScreen extends BaseState<DashBoardScreen> with SingleTickerProvi
 
 
     listEvenData.add(CommonModelResponse(img: "https://images.indianexpress.com/2023/05/Rahul-Gandhi-US-Visit.jpg?w=640" ,
-    title: "Embarking on 3-city US tour, Rahul Gandhi’s packed itinerary: Stanford University talk to NRI, media events", date: "Delhi | May 25, 2023 ",));
+    title: "Embarking on 3-city US tour, Rahul Gandhi’s packed itinerary: Stanford University talk to NRI, media events", date: "Delhi | May 25, 2023 ",
+    description: "Senior Congress leader Rahul Gandhi will embark on a six-day, three-city tour of the United States on May 30 during which he will have interactions with the NRI community, business leaders and media persons. He will have a range of such engagements in San Francisco, Washington DC and New York But a last minute legal hurdle is giving anxious moments to the Congress. On Friday, a Delhi court is set to give its ruling on Rahul’s plea seeking a no-objection certificate (NOC) for issuance of an “ordinary passport” to him after he surrendered his diplomatic passport following his disqualification as an MP."));
 
     listEvenData.add(CommonModelResponse(img: "https://www.hindustantimes.com/ht-img/img/2023/04/01/550x309/Congress-leader-Rahul-Gandhi---PTI-_1678221324375_1680326471083_1680326471083.jpg" ,
-      title: "Rahul Gandhi’s event postponed to April 9 coinciding with PM Modi’s programme in Karnataka ", date: "New Delhi | Jul 03, 2023 ",));
+      title: "Rahul Gandhi’s event postponed to April 9 coinciding with PM Modi’s programme in Karnataka ", date: "New Delhi | Jul 03, 2023 ",
+    description: "Rahul Gandhi will be in Kolar on April 9 and address the Jai Bharat Mega Rally there. On April 11, he will visit Wayanad. He is the voice of the people, you can never silence him. This voice will only get louder and stronger tweeted Congress general secretary KC Venugopal on Friday.Notably, the election rally will be the first such public meeting of Rahul Gandhi after he was disqualified as a member of Lok Sabha."));
 
     listEvenData.add(CommonModelResponse(img: "https://th-i.thgim.com/public/incoming/4drdi2/article66915285.ece/alternates/LANDSCAPE_1200/20230531029L.jpg" ,
-    title: "Khalistani supporters heckle Rahul Gandhi at an event in U.S.", date: "California | May 31, 2023 ",));
+    title: "Khalistani supporters heckle Rahul Gandhi at an event in U.S.", date: "California | May 31, 2023 ",
+    description: "nteracts with the Indian diaspora in San Francisco, California, on May 31. | Photo Credit: ANI Congress leader Rahul Gandhi was heckled by a group of Khalistani supporters who raised slogans against him and briefly interrupted his speech during an event, in Santa Clara in the U.S. state of California Mr. Gandhi was speaking at the 'Mohabbat Ki Dukaan' event organised by Indian Overseas Congress USA in Santa Clara on May 30 when some people from the audience started raising slogans against him and the Gandhi family in connection with the 1984 anti-Sikh riots."));
 
 
-    listEmpowerData.add(CommonModelResponse(img: "https://images.indianexpress.com/2023/01/PHOTO-2023-01-16-08-54-35.jpg?w=640", title: " Punjab leg of Rahul Gandhi’s yatra focuses on women empowerment", place: "Jalandhar"));
-    listEmpowerData.add(CommonModelResponse(img: "https://img.etimg.com/thumb/msid-97198988,width-300,height-225,imgsize-1122668,,resizemode-75/bjp-rss-capturing-all-institutions-in-country-rahul-gandhi.jpg", title: "Rahul lauds Wayanad on becoming first Indian district to digitise tribals' documents ", place: "Delhi"));
-    listEmpowerData.add(CommonModelResponse(img: "https://img.etimg.com/thumb/msid-23111596,width-300,height-225,imgsize-80059,,resizemode-75/.jpg", title: " Congress is committed to empower the common man", place: ""));
+    listEmpowerData.add(CommonModelResponse(img: "https://images.indianexpress.com/2023/01/PHOTO-2023-01-16-08-54-35.jpg?w=640", title: " Punjab leg of Rahul Gandhi’s yatra focuses on women empowerment", place: "Jalandhar",
+    description: "As Congress leader Rahul Gandhi’s Bharat Jodo Yatra entered its fifth day in Punjab on Monday, hundreds of women including MGNREGA workers and Accredited Social Health Activists (ASHAs) walked with him. The yatra was dedicated to the cause of women empowerment for the day."));
+
+    listEmpowerData.add(CommonModelResponse(img: "https://img.etimg.com/thumb/msid-97198988,width-300,height-225,imgsize-1122668,,resizemode-75/bjp-rss-capturing-all-institutions-in-country-rahul-gandhi.jpg", title: "Rahul lauds Wayanad on becoming first Indian district to digitise tribals' documents ", place: "Delhi",
+        description: "Congress leader Rahul Gandhi on Saturday congratulated Kerala's Wayanad on becoming India's first district to digitise basic documents of all tribals. An empowered tribal community is the cornerstone of a strong India,Rahul, who represents Wayanad in Lok Sabha, wrote on Twitter."));
+
+    listEmpowerData.add(CommonModelResponse(img: "https://img.etimg.com/thumb/msid-23111596,width-300,height-225,imgsize-80059,,resizemode-75/.jpg", title: " Congress is committed to empower the common man", place: "",
+        description: "Congress Vice President Rahul Gandhi on Thursday asserted that his party is common man-centric and committed to empower them while the Opposition believes that one or two leaders can govern a country. Addressing a gathering at the Adivasi Adhikar Sammelan at Jagdalpur in naxal-infested Bastar,Gandhi,attacking the BJP said that there are two political philosophies prevailing in India."));
 
     listSocialData.add(CommonModelResponse(img: "https://c.ndtvimg.com/2023-06/mha31jfk_rahul-gandhi-1200_625x300_27_June_23.jpg", date: "July 01, 2023", title: "Complainant Seeks Admission Of Rahul Gandhi Tweets In RSS Defamation Case"));
     listSocialData.add(CommonModelResponse(img: "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202304/rahulgandhi456-sixteen_nine.jpeg?VersionId=ZBgla89Zw3HH5fYuukNxYovfxvE8vHSi&size=690:388", date: "Apr 03, 2023," , title: "Rahul Gandhi's tweet after appearing in Surat Sessions Court"));
@@ -244,9 +254,12 @@ class _DashBoardScreen extends BaseState<DashBoardScreen> with SingleTickerProvi
     listVideoData.add(CommonModelResponse(img: "https://im.rediff.com/news/2023/mar/24rahul-gandhi4.jpg?w=670&h=900",));
     listVideoData.add(CommonModelResponse(img: "https://images.hindustantimes.com/img/2022/08/05/550x309/Rahul_gandhi_at_price_rise_gst_presser_1659678147598_1659678147848_1659678147848.jpg",));
 
-    listMediaData.add(CommonModelResponse(img: "https://ichef.bbci.co.uk/news/976/cpsprodpb/16270/production/_129963709_gettyimages-1258358125-594x594.jpg.webp", date: "June 3, 2023", title: "Rahul Gandhi in US: Why Indian politicians woo the diaspora"));
-    listMediaData.add(CommonModelResponse(img: "https://static.theprint.in/wp-content/uploads/2023/06/Untitled-design-58-3.jpg", date: "June 29, 2023", title: "Rahul Gandhi lands in violence-hit Manipur, ‘PM should learn from him,’ says Congress"));
-    listMediaData.add(CommonModelResponse(img: "https://c.ndtvimg.com/2023-06/mha31jfk_rahul-gandhi-1200_625x300_27_June_23.jpg", date: " Jun 30, 2023", title: "Rahul Gandhi's visit to Manipur is for media coverage: Assam CM",));
+    listMediaData.add(CommonModelResponse(img: "https://ichef.bbci.co.uk/news/976/cpsprodpb/16270/production/_129963709_gettyimages-1258358125-594x594.jpg.webp", date: "June 3, 2023", title: "Rahul Gandhi in US: Why Indian politicians woo the diaspora",
+    description: "The Indian diaspora might not have turned up in thousands like they do for Prime Minister Narendra Modi. But, for a politician who is no longer a member of parliament, nor the leader of the opposition, volunteers of the Indian Overseas Congress - Congress party's international chapter - managed enough people to fill the audience for Mr Gandhi's events."));
+    listMediaData.add(CommonModelResponse(img: "https://static.theprint.in/wp-content/uploads/2023/06/Untitled-design-58-3.jpg", date: "June 29, 2023", title: "Rahul Gandhi lands in violence-hit Manipur, ‘PM should learn from him,’ says Congress",
+        description: "He will visit relief camps and meet people displaced by the ethnic clashes, and will also hold talks with civil society organisations. This is the first visit of the Congress leader to the northeastern state since violence broke out on 3 May between hill-based Kuki tribes and valley-based Meitei non-tribals State Congress leader Kh Debabrata said Gandhi will visit relief camps in Churachandpur and Moirang on Thursday. On Friday, he will visit two more camps and meet party leaders in capital Imphal."));
+    listMediaData.add(CommonModelResponse(img: "https://c.ndtvimg.com/2023-06/mha31jfk_rahul-gandhi-1200_625x300_27_June_23.jpg", date: " Jun 30, 2023", title: "Rahul Gandhi's visit to Manipur is for media coverage: Assam CM",
+        description: "After Congress leader Rahul Gandhi was stopped from visiting Manipur’s Churachandpur by road, Assam CM Himanta Biswa Sarma said that Rahul's trip is just a one-day media coverage. He added, [The] situation in Manipur demands bridging differences through compassion. It’s not in [the] nation’s interest for a political leader to use his so-called visit to exacerbate fault lines."));
 
 
     isHomeReload = false;
@@ -486,7 +499,7 @@ class _DashBoardScreen extends BaseState<DashBoardScreen> with SingleTickerProvi
               child: GestureDetector(
                 onTap: (){
                   HapticFeedback.vibrate();
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => NavigationDrawerScreen()),);
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => NavScreen()),);
                 },
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(50),
@@ -1198,9 +1211,9 @@ class _DashBoardScreen extends BaseState<DashBoardScreen> with SingleTickerProvi
                             physics: const ScrollPhysics(),
                             itemBuilder: (context, index) {
                               return GestureDetector(
-                                // onTap: () async {
-                                //   detailsPageIntent(context,setState,listEvents,index);
-                                // },
+                                onTap: (){
+                                  Navigator.push(context, MaterialPageRoute(builder: (context) => DetailScreen(listEvenData[index])));
+                                },
                                 child: Container(
                                   margin: const EdgeInsets.only(left: 15, right: 15,),
                                   alignment: Alignment.bottomLeft,
@@ -1363,7 +1376,12 @@ class _DashBoardScreen extends BaseState<DashBoardScreen> with SingleTickerProvi
                             controller: controllerCSR,
                             physics: const ScrollPhysics(),
                             itemBuilder: (context, index) {
-                              return CSRBlock(listEmpowerData[index]);
+                              return GestureDetector(
+                                  onTap: (){
+                                    Navigator.push(context, MaterialPageRoute(builder: (context) => DetailScreen(listEmpowerData[index])));
+                                  },
+                                  child: CSRBlock(listEmpowerData[index])
+                              );
                             },
                           )
                       ),//CSR
@@ -1468,7 +1486,12 @@ class _DashBoardScreen extends BaseState<DashBoardScreen> with SingleTickerProvi
                             itemCount: listSocialData.length,
                             physics: const ScrollPhysics(),
                             itemBuilder: (context, index) {
-                              return SocialBlock(listSocialData[index]);
+                              return GestureDetector(
+                                  // onTap: (){
+                                  //   Navigator.push(context, MaterialPageRoute(builder: (context) => DetailScreen(listSocialData[index])));
+                                  // },
+                                  child: SocialBlock(listSocialData[index])
+                              );
                             },
                           )
                       ), //social media
@@ -1728,7 +1751,7 @@ class _DashBoardScreen extends BaseState<DashBoardScreen> with SingleTickerProvi
                             itemBuilder: (context, index) {
                               return GestureDetector(
                                 onTap: () {
-
+                                    Navigator.push(context, MaterialPageRoute(builder: (context) => DetailScreen(listMediaData[index])));
                                 },
                                 child: Card(
                                   elevation: 0,

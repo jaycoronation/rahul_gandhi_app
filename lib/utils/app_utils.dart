@@ -170,7 +170,7 @@ navigationItem(BuildContext context){
                   Image.asset("assets/images/ic_aboutJSP_new_navigation.png", height: 30, width: 30),
                   Container(width: 15,),
                   Text(
-                    "About JSP".toUpperCase(),
+                    "About Rahul Gandhi".toUpperCase(),
                     style: TextStyle(fontFamily: gilroy, fontSize: 16, color: black, fontWeight: FontWeight.w500),
                   )
                 ],
@@ -191,7 +191,7 @@ navigationItem(BuildContext context){
               padding: const EdgeInsets.all(6.0),
               child: Row(
                 children: [
-                  Image.asset("assets/images/ic_aboutChairman_new_navigation.png", height: 30, width: 30),
+                  Image.asset("assets/images/rh.jpg", height: 30, width: 30),
                  Container(width: 15,),
                   Text(
                     "Chairman's Space".toUpperCase(),
