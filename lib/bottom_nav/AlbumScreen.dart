@@ -6,6 +6,7 @@ import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:pretty_http_logger/pretty_http_logger.dart';
 import '../constant/api_end_point.dart';
 import '../constant/colors.dart';
+import '../model/CommonModelResponse.dart';
 import '../utils/app_utils.dart';
 import '../utils/base_class.dart';
 import '../widget/loading.dart';
@@ -26,9 +27,16 @@ class _AlbumScreen extends BaseState<AlbumScreen> {
   bool _isLastPage = false;
   bool isScrollingDown = false;
   late ScrollController _scrollViewController;
+  List<CommonModelResponse> listPhotosData = [];
+
 
   @override
   void initState() {
+    listPhotosData.add(CommonModelResponse(img: "https://c.ndtvimg.com/2022-11/peuk7h08_rahul-gandhi_625x300_02_November_22.jpg", title: "Plays Drums, Celebrates 'Bonalu' "));
+    listPhotosData.add(CommonModelResponse(img: "https://feeds.abplive.com/onecms/images/uploaded-images/2022/10/17/f86abb95f6976740922d6198cc21cb3d1665976699200120_original.png?impolicy=abp_cdn&imwidth=720", title: "Bharat Jodo Yatra"));
+    listPhotosData.add(CommonModelResponse(img: "https://images.newindianexpress.com/uploads/user/imagelibrary/2023/4/23/w900X450/RahulGandhi-Basavanna.JPG?w=900&dpr=1.0", title: "'Basava Jayanti' in Karnataka"));
+    listPhotosData.add(CommonModelResponse(img: "https://images.indianexpress.com/2023/07/rahul-gandhi-khammam.jpg?w=640", title: "addresses a public meeting, in Khammam district"));
+    listPhotosData.add(CommonModelResponse(img: "https://th-i.thgim.com/public/incoming/rqpjtg/article67034745.ece/alternates/FREE_1200/10215_2_7_2023_18_36_35_1_IMG_20230702_WA0061.JPG", title: "visit Andhra Pradesh"));
 
     _scrollViewController = ScrollController();
     _scrollViewController.addListener(() {
@@ -97,7 +105,7 @@ class _AlbumScreen extends BaseState<AlbumScreen> {
                               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                                   crossAxisCount: 2, mainAxisExtent: 300, crossAxisSpacing: 2, mainAxisSpacing: 2),
                               physics: const AlwaysScrollableScrollPhysics(),
-                              itemCount: 5,
+                              itemCount: listPhotosData.length,
                               controller: _scrollViewController,
                               itemBuilder: (BuildContext context, int index) {
                                 return AnimationConfiguration.staggeredGrid(
@@ -120,7 +128,7 @@ class _AlbumScreen extends BaseState<AlbumScreen> {
                                               height: 300,
                                               width: MediaQuery.of(context).size.width,
                                               child: FadeInImage.assetNetwork(
-                                                image: "https://static.independent.co.uk/2023/06/05/00/Rahul_Gandhi_New_York_62650.jpg?quality=75&width=990&height=614&fit=bounds&format=pjpg&crop=16%3A9%2Coffset-y0.5&auto=webp",
+                                                image: listPhotosData[index].img.toString(),
                                                 fit: BoxFit.cover,
                                                 width: MediaQuery.of(context).size.width,
                                                 height: 300,
@@ -170,8 +178,8 @@ class _AlbumScreen extends BaseState<AlbumScreen> {
                                             Container(
                                                 alignment: Alignment.bottomCenter,
                                                 margin: const EdgeInsets.only(left: 6, right: 6, top: 14, bottom: 20),
-                                                child: const Text(
-                                                  "Bonalu celebrations \n in Telangana",
+                                                child: Text(
+                                                  listPhotosData[index].title.toString(),
                                                   style: TextStyle(
                                                       fontWeight: titleFont,
                                                       fontFamily: gilroy,

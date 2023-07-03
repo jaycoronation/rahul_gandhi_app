@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:like_button/like_button.dart';
 import 'package:pretty_http_logger/pretty_http_logger.dart';
+import 'package:rahul_gandhi_app/model/CommonModelResponse.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../constant/api_end_point.dart';
@@ -12,8 +13,9 @@ import '../utils/app_utils.dart';
 import '../utils/session_manager.dart';
 
 class WhatsNewBlock extends StatelessWidget {
+  final CommonModelResponse getSet;
 
-  WhatsNewBlock({Key? key, }) : super(key: key);
+  WhatsNewBlock(this.getSet, {Key? key, }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +30,7 @@ class WhatsNewBlock extends StatelessWidget {
           Stack(
             children: [
               Image.network(
-                "https://res.cloudinary.com/dliifke2y/image/upload/v1665053049/gettyimages-136752549-2048x2048_ujbtaf.jpg",
+                getSet.img.toString(),
                 width: MediaQuery.of(context).size.width,
                 height: 280,
                 fit: BoxFit.cover,
@@ -46,7 +48,7 @@ class WhatsNewBlock extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text("Jun 28, 2023",
+                      Text(getSet.date.toString(),
                           style: const TextStyle(
                               color: text_dark, fontFamily: gilroy, fontWeight: FontWeight.w500, fontSize: 16)),
                       Row(
@@ -64,7 +66,7 @@ class WhatsNewBlock extends StatelessWidget {
                     ],
                   ),
                   Text(
-                    "Rahul Gandhi to visit Manipur with healing touch",
+                    getSet.title.toString(),
                     style: TextStyle(
                         height: 1.5,
                         color: black,

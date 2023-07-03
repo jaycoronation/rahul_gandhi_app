@@ -5,12 +5,16 @@ import 'package:flutter/material.dart';
 import 'package:like_button/like_button.dart';
 import 'package:pretty_http_logger/pretty_http_logger.dart';
 import 'package:provider/provider.dart';
+import 'package:rahul_gandhi_app/model/CommonModelResponse.dart';
 import '../constant/api_end_point.dart';
 import '../constant/colors.dart';
 import '../constant/global_context.dart';
 
 class CSRBlock extends StatelessWidget {
   bool isFromRelated = false;
+  final CommonModelResponse setData;
+
+  CSRBlock(this.setData, {Key? key,}) : super(key: key);
 
   // CSRBlock({Key? key, required this.listPost, required this.index, required this.setState, this.isFromRelated = false}) : super(key: key);
 
@@ -38,7 +42,7 @@ class CSRBlock extends StatelessWidget {
               Stack(
                 children: [
                   Image.network(
-                    "https://res.cloudinary.com/dliifke2y/image/upload/v1665054169/gettyimages-107693272-612x612_yiwevv.jpg",
+                   setData.img.toString(),
                     width: MediaQuery.of(context).size.width,
                     height: 260,
                     fit: BoxFit.cover,
@@ -69,7 +73,7 @@ class CSRBlock extends StatelessWidget {
                   Container(
                     margin: const EdgeInsets.fromLTRB(6, 6, 12, 12),
                     child: Text(
-                      "About Rahul Gandhi",
+                      setData.title.toString(),
                       style: const TextStyle(
                           color: blackConst,
                           fontWeight: FontWeight.w600,
@@ -88,18 +92,18 @@ class CSRBlock extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Text(
-                          "Odish, Jharkhand and Chattisgarth",
+                          setData.place.toString(),
                           overflow: TextOverflow.ellipsis,
                           style: const TextStyle(fontSize: 15, fontFamily: gilroy, fontWeight: FontWeight.w400, color: blackConst),
                         ),
 
-                        Flexible(
-                          child: Text(
-                            "",
-                            overflow: TextOverflow.ellipsis,
-                            style:  const TextStyle(fontSize: 15, fontFamily: gilroy, fontWeight: FontWeight.w400, color: blackConst),
-                          ),
-                        ),
+                        // Flexible(
+                        //   child: Text(
+                        //     setData.date.toString(),
+                        //     overflow: TextOverflow.ellipsis,
+                        //     style:  const TextStyle(fontSize: 15, fontFamily: gilroy, fontWeight: FontWeight.w400, color: blackConst),
+                        //   ),
+                        // ),
                       ],
                     ),
                   ),

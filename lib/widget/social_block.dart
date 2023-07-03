@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pretty_http_logger/pretty_http_logger.dart';
+import 'package:rahul_gandhi_app/model/CommonModelResponse.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../constant/api_end_point.dart';
@@ -10,8 +11,9 @@ import '../constant/colors.dart';
 
 
 class SocialBlock extends StatelessWidget {
+  final CommonModelResponse socialData;
 
-  const SocialBlock({Key? key, }) : super(key: key);
+  const SocialBlock(this.socialData, {Key? key, }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +30,7 @@ class SocialBlock extends StatelessWidget {
           Stack(
             children: [
               Image.network(
-                "https://res.cloudinary.com/dliifke2y/image/upload/v1665053050/gettyimages-1013854582-2048x2048_gp57y6.jpg",
+                socialData.img.toString(),
                 width: MediaQuery.of(context).size.width,
                 height: 320,
                 fit: BoxFit.cover,
@@ -62,7 +64,7 @@ class SocialBlock extends StatelessWidget {
               children: [
                 Expanded(
                   child: Text(
-                   "Congress leader Rahul Gandhi on Sunday questioned the Centre over unemployment and alleged that two lakh jobs were 'eliminated' from PSUs, while also accusing the government of trampling upon the hopes of youths for the 'benefit of a few crony capitalist friends'.",
+                    socialData.title.toString(),
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle (
                         color: black,

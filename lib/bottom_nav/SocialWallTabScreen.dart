@@ -6,6 +6,7 @@ import 'package:pretty_http_logger/pretty_http_logger.dart';
 import '../common_widget/common_widget.dart';
 import '../constant/api_end_point.dart';
 import '../constant/colors.dart';
+import '../model/CommonModelResponse.dart';
 import '../utils/app_utils.dart';
 import '../utils/base_class.dart';
 import '../widget/loading.dart';
@@ -27,9 +28,17 @@ class _SocialWallScreen extends BaseState<SocialWallTabScreen> {
   bool _isLastPage = false;
   bool isScrollingDown = false;
   late ScrollController _scrollViewController;
+  List<CommonModelResponse> listSocialData = [];
+
 
   @override
   void initState() {
+    listSocialData.add(CommonModelResponse(img: "https://static.abplive.com/wp-content/uploads/2020/05/06223653/rahul-gandhi.jpg?impolicy=abp_cdn&imwidth=720", date: "May 14, 2020" , title: "'We Will Take Your Voice To The Govt': Rahul Gandhi Tweets Heart-Wrenching Video Of Hapless Migrant Labourers"));
+    listSocialData.add(CommonModelResponse(img: "https://c.ndtvimg.com/2023-06/mha31jfk_rahul-gandhi-1200_625x300_27_June_23.jpg", date: "July 01, 2023", title: "Complainant Seeks Admission Of Rahul Gandhi Tweets In RSS Defamation Case"));
+    listSocialData.add(CommonModelResponse(img: "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202304/rahulgandhi456-sixteen_nine.jpeg?VersionId=ZBgla89Zw3HH5fYuukNxYovfxvE8vHSi&size=690:388", date: "Apr 03, 2023," , title: "Rahul Gandhi's tweet after appearing in Surat Sessions Court"));
+    listSocialData.add(CommonModelResponse(img: "https://c.ndtvimg.com/2021-08/v2soapbo_rahul-gandhi_650x400_13_August_21.jpg", date: "Sep 06, 2021" , title: "Rahul Gandhi's Tweet Supporting Farmers' Protest"));
+
+
     _scrollViewController = ScrollController();
     _scrollViewController.addListener(() {
       if (_scrollViewController.position.userScrollDirection == ScrollDirection.reverse) {
@@ -106,7 +115,7 @@ class _SocialWallScreen extends BaseState<SocialWallTabScreen> {
                   physics: const AlwaysScrollableScrollPhysics(),
                   shrinkWrap: true,
                   controller: _scrollViewController,
-                  itemCount:5,
+                  itemCount:listSocialData.length,
                   itemBuilder: (context, index) {
                     return AnimationConfiguration.staggeredList(
                       position: index,
@@ -114,7 +123,7 @@ class _SocialWallScreen extends BaseState<SocialWallTabScreen> {
                       child: SlideAnimation(
                         verticalOffset: 50.0,
                         child: FadeInAnimation(
-                          child: SocialBlock(),
+                          child: SocialBlock(listSocialData[index]),
                         ),
                       ),
                     );

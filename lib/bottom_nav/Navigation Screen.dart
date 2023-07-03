@@ -41,7 +41,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
                      blurRadius: 2.0,
                    ),],
                  border: Border.all(width: 0.5),
-                 borderRadius:const BorderRadius.all(Radius.circular(12),) ,
+                 borderRadius:const BorderRadius.all(Radius.circular(12),),
                  color: white,
                ),
                child: Column(
@@ -50,7 +50,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
                  children: [
                    Container(height: 20,),
                    Container(
-                     margin: const EdgeInsets.only(left: 12, right: 12, ),
+                     margin: const EdgeInsets.only(left: 12, right: 12,),
                      child: IntrinsicHeight(
                        child: Column(
                          children: [

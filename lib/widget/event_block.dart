@@ -4,14 +4,17 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pretty_http_logger/pretty_http_logger.dart';
 import 'package:provider/provider.dart';
+import 'package:rahul_gandhi_app/model/CommonModelResponse.dart';
 import '../constant/api_end_point.dart';
 import '../constant/colors.dart';
 import '../constant/global_context.dart';
 
 
 class EventBlock extends StatelessWidget {
+  final CommonModelResponse getSet;
 
-  EventBlock({Key? key,}) : super(key: key);
+
+  EventBlock(this.getSet, {Key? key,}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +35,7 @@ class EventBlock extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "What solution Rahul Gandhi to bring in Manipur: Himanta Biswa Sarma's jibe at ‘one-day media drama’",
+                getSet.title.toString(),
                 overflow: TextOverflow.clip,
                 style: const TextStyle(
                     color: blackConst,
@@ -43,7 +46,7 @@ class EventBlock extends StatelessWidget {
               ),
               Container(height: 12,),
           Text(
-              "Manipur . June 30, 2023",
+            "${getSet.place} . ${getSet.date}",
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
                 fontSize: 16,
@@ -55,7 +58,7 @@ class EventBlock extends StatelessWidget {
             ),
             Container(height: 12,),
             Text(
-              "Rahul Gandhi's visit to Manipur will not bring any solution to the tense situation of the state and is only a one-day media hype",
+              getSet.description.toString(),
               // overflow: TextOverflow.ellipsis,
               style: TextStyle(
                 fontSize: 16,
@@ -106,16 +109,16 @@ class EventBlock extends StatelessWidget {
               //     Expanded(child: Container())
               //   ],
               // ),
-              Container(height: 12,),
-              Text(
+              Container(height: 0,),
+              const Text(
                 "",
                 maxLines: 4,
-                style: const TextStyle(color: text_dark, height: 1.5,fontSize: 14, fontWeight: FontWeight.w500,fontFamily: gilroy),
+                style: TextStyle(color: text_dark, height: 1.5,fontSize: 14, fontWeight: FontWeight.w500,fontFamily: gilroy),
               ),
               Container(height: 12,),
               Container(height: 12,),
               Image.network(
-                "https://res.cloudinary.com/dliifke2y/image/upload/v1665053049/gettyimages-136752549-2048x2048_ujbtaf.jpg",
+                getSet.img.toString(),
                 fit: BoxFit.cover,
                 height: 200,
                 width: MediaQuery.of(context).size.width,
