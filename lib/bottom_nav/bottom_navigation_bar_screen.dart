@@ -1,24 +1,19 @@
 import 'dart:async';
-import 'dart:convert';
 import 'dart:io';
 import 'package:dotted_line/dotted_line.dart';
 import 'package:feature_discovery/feature_discovery.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:package_info_plus/package_info_plus.dart';
-import 'package:rahul_gandhi_app/widget/video_block.dart';
 import '../constant/colors.dart';
-import '../constant/global_context.dart';
 import '../utils/app_utils.dart';
 import '../utils/base_class.dart';
 import 'DashBoardScreen.dart';
 import 'EventScreenTab.dart';
 import 'MediaScreen.dart';
 import 'SocialWallTabScreen.dart';
-import 'VideoScreen.dart';
 
 
 class BottomNavigationBarScreen extends StatefulWidget {
@@ -58,8 +53,8 @@ class _BottomNavigationBarScreenState extends BaseState<BottomNavigationBarScree
     {
       _pages.add(DashBoardScreen(key : myWidgetState));
       itemsList.add(BottomNavigationBarItem(
-        icon: Image.asset("assets/images/ic_aboutJSP_new_navigation.png",width: 22,height: 22,color: black),
-        activeIcon: Image.asset("assets/images/ic_aboutJSP_new_navigation.png",
+        icon: Image.asset("assets/images/ic_dashboard_new_navigation.png",width: 22,height: 22,color: black),
+        activeIcon: Image.asset("assets/images/ic_dashboard_selected_black.png",
             width: 22,
             height: 22
         ),
@@ -89,11 +84,11 @@ class _BottomNavigationBarScreenState extends BaseState<BottomNavigationBarScree
     ));
 
 
-    itemsList.add(BottomNavigationBarItem(
+    /*itemsList.add(BottomNavigationBarItem(
       icon: Image.asset("assets/images/ic_more_un_selected.png",width: 22,height: 22,color: black),
       activeIcon: Image.asset("assets/images/ic_more_selected_black.png",width: 22,height: 22),
       label: 'More',
-    ));
+    ));*/
 
 
 

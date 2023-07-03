@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
+import 'package:rahul_gandhi_app/bottom_nav/NavigationDrawer.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:touch_ripple_effect/touch_ripple_effect.dart';
 import '../../constant/colors.dart';
@@ -383,7 +384,7 @@ class _DashBoardScreen extends BaseState<DashBoardScreen> with SingleTickerProvi
       appBar: AppBar(
         toolbarHeight: 70,
         automaticallyImplyLeading: false,
-        titleSpacing: 0,
+        titleSpacing: 12,
         leading: DescribedFeatureOverlay(
           featureId: 'id1', // Unique id that identifies this overlay.
           tapTarget: Container(
@@ -414,9 +415,7 @@ class _DashBoardScreen extends BaseState<DashBoardScreen> with SingleTickerProvi
           child: GestureDetector(
             onTap: () async {
               HapticFeedback.vibrate();
-              if (SessionManagerMethods.getBool("isBottomNavigation") ?? false) {
-                profileDialog();
-              }
+              Navigator.push(context, MaterialPageRoute(builder: (context) => NavigationDrawerScreen()),);
             },
             child: Container(
               width: 42,
@@ -430,7 +429,8 @@ class _DashBoardScreen extends BaseState<DashBoardScreen> with SingleTickerProvi
               alignment: Alignment.center,
               child: GestureDetector(
                 onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const NavigationScreen()),);
+                  HapticFeedback.vibrate();
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => NavigationDrawerScreen()),);
                 },
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(50),
@@ -456,15 +456,7 @@ class _DashBoardScreen extends BaseState<DashBoardScreen> with SingleTickerProvi
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
-              alignment: Alignment.centerLeft,
-              margin: const EdgeInsets.only(bottom: 10, left: 5),
-              child: Image.asset(
-                  'assets/images/ic_toolbar_logo_black.png',
-                  height: 60,
-                  width: 120,
-                  fit: BoxFit.cover),
-            ),
+            const Text("RG Speaks",style: TextStyle(color: blueNew,fontSize: 18,fontWeight: FontWeight.w600),),
             const Spacer(),
             GestureDetector(
               behavior: HitTestBehavior.opaque,
@@ -1090,7 +1082,7 @@ class _DashBoardScreen extends BaseState<DashBoardScreen> with SingleTickerProvi
                                 padding: EdgeInsets.all(4.0),
                                 child: CircleAvatar(
                                   radius: 48,
-                                  backgroundImage: NetworkImage(" "),
+                                  backgroundImage: NetworkImage("https://res.cloudinary.com/dliifke2y/image/upload/v1665038522/ic_rahulgandhi4_jizmdr.png"),
                                 ),
                               ),
                             ),
@@ -1341,36 +1333,39 @@ class _DashBoardScreen extends BaseState<DashBoardScreen> with SingleTickerProvi
                           ),
                         ],
                       ),//CSR
-                      Container(
-                        width: MediaQuery.of(context).size.width,
-                        padding: const EdgeInsets.fromLTRB(12, 22, 12, 0),
-                        height: 200,
-                        color: white,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "QUICK LINKS",
-                              style: TextStyle(fontFamily: gilroy, fontSize: 16, color: black, fontWeight: FontWeight.w600),
-                            ),
-                            Container(height: 12),
-                            Wrap(
-                              spacing: 6.0,
-                              runSpacing: 0.0,
-                              children: <Widget>[
-                                _buildChip('Foundation'),
-                                _buildChip('Magazine'),
-                                _buildChip('Jindal Panther'),
-                                _buildChip('News'),
-                                _buildChip('Education'),
-                                _buildChip('Media'),
-                                _buildChip('Investment'),
-                                _buildChip('Safety'),
-                                _buildChip('Blogs'),
-                              ],
-                            ),
-                          ],
+                      Visibility(
+                        visible: false,
+                        child: Container(
+                          width: MediaQuery.of(context).size.width,
+                          padding: const EdgeInsets.fromLTRB(12, 22, 12, 0),
+                          height: 200,
+                          color: white,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "QUICK LINKS",
+                                style: TextStyle(fontFamily: gilroy, fontSize: 16, color: black, fontWeight: FontWeight.w600),
+                              ),
+                              Container(height: 12),
+                              Wrap(
+                                spacing: 6.0,
+                                runSpacing: 0.0,
+                                children: <Widget>[
+                                  _buildChip('Foundation'),
+                                  _buildChip('Magazine'),
+                                  _buildChip('Jindal Panther'),
+                                  _buildChip('News'),
+                                  _buildChip('Education'),
+                                  _buildChip('Media'),
+                                  _buildChip('Investment'),
+                                  _buildChip('Safety'),
+                                  _buildChip('Blogs'),
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
                       ), //quickLink
                       Container(

@@ -10,8 +10,8 @@ Widget appBarIcon(){
     alignment: Alignment.centerLeft,
     margin: const EdgeInsets.only(left: 0,right:0,top: 4,bottom: 4),
     child: Padding(
-      padding: const EdgeInsets.only(left: 18.0),
-      child: Image.asset('assets/images/ic_Left_Arrow.png', width: 22, height: 22,color: black,),
+      padding: const EdgeInsets.only(left: 2.0),
+      child: Image.asset('assets/images/ic_back_button.png', width: 22, height: 22,color: black,),
     ),
   );
 }
