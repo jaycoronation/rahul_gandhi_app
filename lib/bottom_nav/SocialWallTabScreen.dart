@@ -33,10 +33,15 @@ class _SocialWallScreen extends BaseState<SocialWallTabScreen> {
 
   @override
   void initState() {
-    listSocialData.add(CommonModelResponse(img: "https://static.abplive.com/wp-content/uploads/2020/05/06223653/rahul-gandhi.jpg?impolicy=abp_cdn&imwidth=720", date: "May 14, 2020" , title: "'We Will Take Your Voice To The Govt': Rahul Gandhi Tweets Heart-Wrenching Video Of Hapless Migrant Labourers"));
-    listSocialData.add(CommonModelResponse(img: "https://c.ndtvimg.com/2023-06/mha31jfk_rahul-gandhi-1200_625x300_27_June_23.jpg", date: "July 01, 2023", title: "Complainant Seeks Admission Of Rahul Gandhi Tweets In RSS Defamation Case"));
-    listSocialData.add(CommonModelResponse(img: "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202304/rahulgandhi456-sixteen_nine.jpeg?VersionId=ZBgla89Zw3HH5fYuukNxYovfxvE8vHSi&size=690:388", date: "Apr 03, 2023," , title: "Rahul Gandhi's tweet after appearing in Surat Sessions Court"));
-    listSocialData.add(CommonModelResponse(img: "https://c.ndtvimg.com/2021-08/v2soapbo_rahul-gandhi_650x400_13_August_21.jpg", date: "Sep 06, 2021" , title: "Rahul Gandhi's Tweet Supporting Farmers' Protest"));
+    listSocialData.add(CommonModelResponse(img: "https://static.abplive.com/wp-content/uploads/2020/05/06223653/rahul-gandhi.jpg?impolicy=abp_cdn&imwidth=720", date: "May 14, 2020" , title: "'We Will Take Your Voice To The Govt': Rahul Gandhi Tweets Heart-Wrenching Video Of Hapless Migrant Labourers",
+    description: "Congress leader Rahul Gandhi on Thursday said that his party will raise voices of migrant labourers and ensure they get help as their livelihood was adversely impacted due to coronavirus-induced lockdown. Gandhi, the Lok Sabha MP from Wayanad, posted a heart-wrenching video of labourers on Twitter with a song in the background, urging the government to help them to reach their native places. Darkness is deep and it is a tough time. Have patience we will stand in their security. We will keep raising their voice and will ensure they get every possible help. They are not ordinary people but they are the flag of the country's self-respect. We will never let it bow down, the Congress leader tweeted in Hindi along with the video."));
+
+    listSocialData.add(CommonModelResponse(img: "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202304/rahulgandhi456-sixteen_nine.jpeg?VersionId=ZBgla89Zw3HH5fYuukNxYovfxvE8vHSi&size=690:388", date: "Apr 03, 2023," , title: "Congress president's post represents a set of ideas, beliefs about India: Rahul Gandhi",
+    description: "Former Congress president Rahul Gandhi on Thursday said he has made his position clear on whether he will fight the party president elections and refused to elaborate on the matter. On being repeatedly asked about the upcoming party polls during a press conference, Rahul said he has communicated his decision to the party and does not need to do so through the media."));
+
+
+    listSocialData.add(CommonModelResponse(img: "https://c.ndtvimg.com/2021-08/v2soapbo_rahul-gandhi_650x400_13_August_21.jpg", date: "Sep 06, 2021" , title: "Rahul Gandhi's Tweet Supporting Farmers' Protest",
+        description: "A day after thousands of farmers gathered at a mahapanchayat in Uttar Pradesh's Muzaffarnagar, Congress leader Rahul Gandhi on Monday voiced support for the protesting farmers and said they are fearless and standing resolutely."));
 
 
     _scrollViewController = ScrollController();

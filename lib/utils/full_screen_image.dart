@@ -30,7 +30,7 @@ class FullScreenImage extends StatelessWidget {
                             imageUrl,
                           ),
                           loadingBuilder: (context, event) => Image.asset(
-                                'assets/images/placeholder.png',
+                                'assets/images/bg_gray.jpeg',
                                 fit: BoxFit.cover,
                               ),
                           enablePanAlways: true,
@@ -57,7 +57,7 @@ class FullScreenImage extends StatelessWidget {
                       itemCount: images!.length,
                       pageController: controller,
                       loadingBuilder: (context, event) => Image.asset(
-                        'assets/images/placeholder.png',
+                        'assets/images/bg_gray.jpeg',
                         fit: BoxFit.contain,
                       ),
                       builder: (context, index) {

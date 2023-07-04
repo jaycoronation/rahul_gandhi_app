@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:intl/intl.dart';
+import 'package:rahul_gandhi_app/bottom_nav/MediaScreen.dart';
 import 'package:rahul_gandhi_app/utils/session_manager.dart';
 
 import '../constant/colors.dart';
@@ -167,7 +168,7 @@ navigationItem(BuildContext context){
               padding: const EdgeInsets.all(6.0),
               child: Row(
                 children: [
-                  Image.asset("assets/images/ic_aboutJSP_new_navigation.png", height: 30, width: 30),
+                  Image.asset("assets/images/congress_logo.jpg", height: 30, width: 30,),
                   Container(width: 15,),
                   Text(
                     "About Rahul Gandhi".toUpperCase(),
@@ -178,7 +179,7 @@ navigationItem(BuildContext context){
             ),
           ),
         ),
-        // const Gap(10),
+         Container(height: 15),
         GestureDetector(
           onTap: () {
             Navigator.pop(context);
@@ -191,7 +192,15 @@ navigationItem(BuildContext context){
               padding: const EdgeInsets.all(6.0),
               child: Row(
                 children: [
-                  Image.asset("assets/images/rh.jpg", height: 30, width: 30),
+                  // Image.asset("assets/images/rh.jpg", height: 30, width: 30),
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(52),
+                    child:  Image.asset(
+                      "assets/images/rh.jpg",
+                      width: 30,
+                      height: 30,
+                      fit: BoxFit.cover,)
+                  ),
                  Container(width: 15,),
                   Text(
                     "Chairman's Space".toUpperCase(),
@@ -202,7 +211,7 @@ navigationItem(BuildContext context){
             ),
           ),
         ),
-        // const Gap(10),
+        Container(height: 15),
         GestureDetector(
           onTap: () {
             Navigator.pop(context);
@@ -250,10 +259,11 @@ navigationItem(BuildContext context){
             ),
           ),
         ),
-        Container(height: 15,),        GestureDetector(
+        Container(height: 15,),
+        GestureDetector(
           onTap: () {
             Navigator.pop(context);
-            // Navigator.push(context, MaterialPageRoute(builder: (context) => const MediaCoverageScreen()));
+            Navigator.push(context, MaterialPageRoute(builder: (context) => const MediaScreen()));
           },
           child: Container(
             color: Colors.transparent,
@@ -263,7 +273,8 @@ navigationItem(BuildContext context){
               child:  Row(
                 children: [
                   Image.asset("assets/images/ic_media_new_navigation.png",height: 30, width: 30),
-                  Container(width: 15,),                       Text(
+                  Container(width: 15,),
+                  Text(
                     "Media Coverage".toUpperCase(),
                     style: TextStyle(fontFamily: gilroy, fontSize: 16, color: black, fontWeight: FontWeight.w500),
                   )
@@ -272,7 +283,8 @@ navigationItem(BuildContext context){
             ),
           ),
         ),
-        Container(height: 15,),        GestureDetector(
+        Container(height: 15,),
+        GestureDetector(
           onTap: () async {
             Navigator.pop(context);
             // Navigator.push(context, MaterialPageRoute(builder: (context) => const MagazineListScreen()));
@@ -296,7 +308,8 @@ navigationItem(BuildContext context){
             ),
           ),
         ),
-        Container(height: 15,),        GestureDetector(
+        Container(height: 15,),
+        GestureDetector(
           onTap: () async {
             Navigator.pop(context);
             // Navigator.push(context, MaterialPageRoute(builder: (context) => const TownHallScreen()));

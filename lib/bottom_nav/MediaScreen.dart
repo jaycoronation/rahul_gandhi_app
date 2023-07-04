@@ -59,7 +59,7 @@ class _MediaScreen extends BaseState<MediaScreen> with SingleTickerProviderState
                 alignment: Alignment.centerLeft,
                 height: 65,
                 margin: const EdgeInsets.only(left: 5),
-                child: appBarTitle('Gallery'),
+                child: appBarTitle('Media'),
               ),
               const Spacer(),
             ],
@@ -85,10 +85,10 @@ class _MediaScreen extends BaseState<MediaScreen> with SingleTickerProviderState
                     elevation: 0,
                     centerTitle: false,
                     leading: InkWell(
-                        onTap: () {
-                          final BottomNavigationBar bar = bottomWidgetKey.currentWidget as BottomNavigationBar;
-                          bar.onTap!(0);
-                        },
+                      onTap: () {
+                        final BottomNavigationBar bar = bottomWidgetKey.currentWidget as BottomNavigationBar;
+                        bar.onTap!(0);
+                      },
                       child: Padding(
                           padding: const EdgeInsets.all(12.0),
                           child: Image.asset('assets/images/ic_back_button.png', width: 4, height: 4,color: black,),
@@ -103,7 +103,7 @@ class _MediaScreen extends BaseState<MediaScreen> with SingleTickerProviderState
                           alignment: Alignment.centerLeft,
                           height: 65,
                           margin: const EdgeInsets.only(left: 5),
-                          child: appBarTitle('Gallery'),
+                          child: appBarTitle('Media'),
                         ),
                         const Spacer(),
                       ],

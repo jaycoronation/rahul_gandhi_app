@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:package_info_plus/package_info_plus.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../constant/colors.dart';
 import '../utils/app_utils.dart';
 import '../utils/base_class.dart';
@@ -190,7 +191,15 @@ class _NavScreen extends BaseState<NavScreen> {
                         children: [
                           GestureDetector(
                             onTap: () async {
-                              // launchCustomTab(context,"https://www.facebook.com/JSPLCorporate/");
+                              var url = Uri.parse("https://www.facebook.com/rahulgandhi/");
+                              if (await canLaunchUrl(url)) {
+                                await launchUrl(
+                                  url,
+                                  mode: LaunchMode.externalApplication,
+                                );
+                              } else {
+                                print('There was a problem to open the url: $url');
+                              }
                             },
                             child: Image.asset(
                               "assets/images/ic_fb_new_navigation.png",
@@ -202,7 +211,15 @@ class _NavScreen extends BaseState<NavScreen> {
                           Container(width: 15),
                           GestureDetector(
                             onTap: () async {
-                              // launchCustomTab(context,"https://instagram.com/jsplcorporate?igshid=YmMyMTA2M2Y=");
+                              var url = Uri.parse("https://www.instagram.com/rahulgandhi/?hl=en");
+                              if (await canLaunchUrl(url)) {
+                                await launchUrl(
+                                  url,
+                                  mode: LaunchMode.externalApplication,
+                                );
+                              } else {
+                                print('There was a problem to open the url: $url');
+                              }
                             },
                             child: Image.asset(
                               "assets/images/ic_ig_new_navigation.png",
@@ -214,7 +231,15 @@ class _NavScreen extends BaseState<NavScreen> {
                           Container(width: 15),
                           GestureDetector(
                             onTap: () async {
-                              // launchCustomTab(context,"https://twitter.com/jsplcorporate?lang=en");
+                              var url = Uri.parse("https://twitter.com/rahulgandhi");
+                              if (await canLaunchUrl(url)) {
+                                await launchUrl(
+                                  url,
+                                  mode: LaunchMode.externalApplication,
+                                );
+                              } else {
+                                print('There was a problem to open the url: $url');
+                              }
                             },
                             child: Image.asset(
                               "assets/images/ic_twitter_new_navigation.png",
@@ -226,7 +251,15 @@ class _NavScreen extends BaseState<NavScreen> {
                            Container(width: 15),
                           GestureDetector(
                             onTap: () async {
-                              // launchCustomTab(context,"https://www.youtube.com/@JSPLCorporate");
+                              var url = Uri.parse("https://www.youtube.com/c/rahulgandhi");
+                              if (await canLaunchUrl(url)) {
+                                await launchUrl(
+                                  url,
+                                  mode: LaunchMode.externalApplication,
+                                );
+                              } else {
+                                print('There was a problem to open the url: $url');
+                              }
                             },
                             child: Image.asset(
                               "assets/images/ic_youtube_new_navigation.png",

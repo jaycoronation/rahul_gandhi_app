@@ -6,6 +6,7 @@ import 'package:like_button/like_button.dart';
 import 'package:pretty_http_logger/pretty_http_logger.dart';
 import 'package:provider/provider.dart';
 import 'package:rahul_gandhi_app/model/CommonModelResponse.dart';
+import '../CommonDetailPageScreen.dart';
 import '../constant/api_end_point.dart';
 import '../constant/colors.dart';
 import '../constant/global_context.dart';
@@ -21,18 +22,14 @@ class CSRBlock extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () async {
-        // if (isFromRelated)
-        //   {
-        //     Navigator.pop(context);
-        //   }
-        // detailsPageIntent(context,setState,listPost,index);
+      onTap: () {
+        Navigator.push(context, MaterialPageRoute(builder: (context) => DetailScreen(setData)));
       },
       child: Container(
         alignment: Alignment.bottomLeft,
         height: 370,
         color: grayBg,
-        margin: EdgeInsets.only(top: 14,right: 12,left: 12),
+        margin: const EdgeInsets.only(top: 14,right: 12,left: 12),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(0),
           child: Column(

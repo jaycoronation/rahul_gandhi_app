@@ -73,7 +73,7 @@ class _BottomNavigationBarScreenState extends BaseState<BottomNavigationBarScree
     itemsList.add(BottomNavigationBarItem(
       icon: Image.asset("assets/images/ic_media_un_selected.png",width: 22,height: 22,color: black),
       activeIcon: Image.asset("assets/images/ic_media_selected_white.png",width: 22,height: 22),
-      label: 'Gallery',
+      label: 'Media',
     ));
 
     _pages.add(const SocialWallTabScreen());

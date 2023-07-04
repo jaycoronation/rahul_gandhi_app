@@ -1786,7 +1786,8 @@ class _DashBoardScreen extends BaseState<DashBoardScreen> with SingleTickerProvi
                                                 fontWeight: FontWeight.w600,
                                                 fontFamily: gilroy,
                                                 fontSize: titleFontSize,
-                                                overflow: TextOverflow.ellipsis),
+                                                overflow: TextOverflow.ellipsis
+                                            ),
                                             maxLines: 2,
                                           ),
                                         ),
@@ -1877,7 +1878,8 @@ class _DashBoardScreen extends BaseState<DashBoardScreen> with SingleTickerProvi
                                 children: <TextSpan>[
                                   TextSpan(
                                       text: 'VIDEOS',
-                                      style: TextStyle(fontFamily: gilroy, fontSize: 16, color: black, fontWeight: FontWeight.w600)),
+                                      style: TextStyle(fontFamily: gilroy, fontSize: 16, color: black, fontWeight: FontWeight.w600)
+                                  ),
                                 ],
                               ),
                             ),
@@ -1937,7 +1939,8 @@ class _DashBoardScreen extends BaseState<DashBoardScreen> with SingleTickerProvi
                                         height: 36,
                                         width: 36,
                                         color: black,
-                                      ))
+                                      )
+                                  )
                                 ],
                               ),
                             );

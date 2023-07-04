@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:pretty_http_logger/pretty_http_logger.dart';
 import 'package:provider/provider.dart';
 import 'package:rahul_gandhi_app/model/CommonModelResponse.dart';
+import '../CommonDetailPageScreen.dart';
 import '../constant/api_end_point.dart';
 import '../constant/colors.dart';
 import '../constant/global_context.dart';
@@ -20,7 +21,7 @@ class EventBlock extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () async {
-
+        Navigator.push(context, MaterialPageRoute(builder: (context) => DetailScreen(getSet)));
       },
       child: Card(
         margin: const EdgeInsets.only(top: 14),

@@ -16,11 +16,6 @@ import '../utils/session_manager.dart';
 class WhatsNewBlock extends StatelessWidget {
   final CommonModelResponse getSet;
 
-  @override
-  void initState() {
-   getSet;
-  }
-
   WhatsNewBlock(this.getSet, {Key? key, }) : super(key: key);
 
   @override
